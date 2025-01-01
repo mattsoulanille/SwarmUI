@@ -65,7 +65,7 @@ elif [ "$GPU_TYPE" == "amd" ]; then
 fi
 
 echo "Replacing torch with one that works on gh200 machines"
-NEW_URL="https://drive.usercontent.google.com/download?id=1cR91eMT23Oz3xjYPsZjFXOXYr0naTxwB&export=download&authuser=0&confirm=t&uuid=c87532c3-830a-4b39-9f33-de84f378291b&at=APvzH3rpCSZ0grdFTQkdwRDaWxRc:1735694621023"
+NEW_URL="https://drive.usercontent.google.com/download?id=1MDNtLcc7vw94P2oqa5Ub1Uk_JAmePHOI&export=download&authuser=0&confirm=t&uuid=f0ddb3b8-d868-43d5-9493-230753aa0047&at=APvzH3pjwCkX5b_3N8z2Lstdky7-%3A1735704293904"
 TORCH_WHL="torch-2.6.0.dev20241231+cu126-cp310-cp310-linux_aarch64.whl"
 curl ${NEW_URL} > ${TORCH_WHL}
 
