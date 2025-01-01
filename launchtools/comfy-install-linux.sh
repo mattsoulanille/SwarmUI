@@ -66,7 +66,7 @@ fi
 
 echo "Replacing torch with one that works on gh200 machines"
 NEW_URL="https://drive.usercontent.google.com/download?id=1MDNtLcc7vw94P2oqa5Ub1Uk_JAmePHOI&export=download&authuser=0&confirm=t&uuid=f0ddb3b8-d868-43d5-9493-230753aa0047&at=APvzH3pjwCkX5b_3N8z2Lstdky7-%3A1735704293904"
-TORCH_WHL="torch-2.6.0.dev20241231+cu126-cp310-cp310-linux_aarch64.whl"
+TORCH_WHL="torch-2.6.0.dev20241231+cu126-cp311-cp311-linux_aarch64.whl"
 curl ${NEW_URL} > ${TORCH_WHL}
 
 sed -i.bak "s/^torch$/${TORCH_WHL}/g" requirements.txt
