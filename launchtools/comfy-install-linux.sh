@@ -64,12 +64,12 @@ elif [ "$GPU_TYPE" == "amd" ]; then
     $python -s -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/rocm6.1
 fi
 
-$python -s -m pip install -r requirements.txt
-
 echo "Replacing torch with one that works on gh200 machines"
 NEW_URL="https://drive.usercontent.google.com/download?id=1cR91eMT23Oz3xjYPsZjFXOXYr0naTxwB&export=download&authuser=0&confirm=t&uuid=c87532c3-830a-4b39-9f33-de84f378291b&at=APvzH3rpCSZ0grdFTQkdwRDaWxRc:1735694621023"
 TORCH_WHL="torch-2.6.0.dev20241231+cu126-cp310-cp310-linux_aarch64.whl"
 curl ${NEW_URL} > ${TORCH_WHL}
-$python -s -m pip install ${TORCH_WHL}
+
+sed -i.bak "s/^torch$/${TORCH_WHL}/g" requirements.txt
+$python -s -m pip install -r requirements.txt
 
 echo "Installation completed for $GPU_TYPE GPU."
